@@ -88,3 +88,83 @@ The project is built with a scalable architecture and complies with healthcare d
    ```bash
    git clone https://github.com/yourusername/niramaya.git
    cd niramaya/backend
+Install dependencies:
+
+bash
+Copy code
+npm install
+Create .env file:
+
+Create a .env file in the root of the backend folder with the following variables:
+
+plaintext
+Copy code
+MONGO_URI=<your-mongodb-uri>
+JWT_SECRET=<your-jwt-secret>
+EMAIL_SERVICE=<your-email-service>
+EMAIL_USER=<your-email-address>
+EMAIL_PASSWORD=<your-email-password>
+Start the backend server:
+
+bash
+Copy code
+npm run start
+The server should now be running on http://localhost:5000.
+
+Frontend Setup
+Navigate to the frontend folder:
+
+bash
+Copy code
+cd ../frontend
+Install frontend dependencies:
+
+bash
+Copy code
+npm install
+Create .env file:
+
+Create a .env file in the root of the frontend folder with the following variable:
+
+plaintext
+Copy code
+REACT_APP_BACKEND_URL=http://localhost:5000
+Start the frontend development server:
+
+bash
+Copy code
+npm run start
+The frontend should now be running on http://localhost:3000.
+
+API Endpoints
+Auth Routes
+POST /api/auth/signup: Sign up a new patient.
+POST /api/auth/login: Log in a doctor or patient.
+POST /api/auth/verify-otp: Verify OTP for patient login.
+Doctor Routes
+GET /api/doctors: Fetch all doctors.
+GET /api/doctors/
+: Fetch doctor by ID.
+POST /api/doctors/update-profile: Update doctor profile.
+GET /api/doctors/
+/appointments: Get appointments for a specific doctor.
+Patient Routes
+GET /api/patients/
+: Fetch patient profile by ID.
+POST /api/patients/update-profile: Update patient profile.
+GET /api/patients/
+/appointments: Get appointments for a specific patient.
+Appointment Routes
+POST /api/appointments/book: Book an appointment with a doctor.
+GET /api/appointments/active: Get all active appointments for a patient.
+GET /api/appointments/completed: Get completed appointments for a patient.
+Admin Routes
+GET /api/admin/dashboard: Fetch data for admin dashboard.
+Contributing
+If you would like to contribute to this project:
+
+Fork the repository.
+Create a new branch for your feature or bugfix.
+Submit a pull request for review.
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
